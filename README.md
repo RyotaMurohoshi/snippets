@@ -1,4 +1,4 @@
-# Memos
+# Snippets
 
 This repository contains code snippets and sample project.
 
