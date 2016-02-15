@@ -14,7 +14,9 @@
   "scripts": {
     "test": "gulp test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^3.3.1"
+  },
   "devDependencies": {
     "del": "2.0.2",
     "gulp": "^3.9.0",
