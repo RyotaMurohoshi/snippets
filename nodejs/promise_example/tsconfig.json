@@ -12,6 +12,6 @@
     "src/**/*.ts"
   ],
   "files": [
-    "src/index.ts"
+    "src\\promisfy_example.ts"
   ]
 }
