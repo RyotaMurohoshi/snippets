@@ -12,6 +12,7 @@
     "src/**/*.ts"
   ],
   "files": [
-    "src/index.ts"
+    "src\\map_series_example.ts",
+    "src\\promisfy_example.ts"
   ]
 }
