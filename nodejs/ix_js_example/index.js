@@ -26,10 +26,16 @@ console.log(Ix.Enumerable
     .fromArray(["JavaScript", "TypeScript", "CoffeScript", "Elm"])
     .maxBy(it => it.length)
     .toArray());
-
+console.log(Ix.Enumerable
+    .fromArray(["JavaScript", "TypeScript", "CoffeScript", "Elm"])
+    .minBy(it => it.length)
+    .toArray());
 console.log(Ix.Enumerable
     .fromArray(["JavaScript", "TypeScript", "CoffeScript", "Elm"])
     .max(it => it.length));
+console.log(Ix.Enumerable
+    .fromArray(["JavaScript", "TypeScript", "CoffeScript", "Elm"])
+    .min(it => it.length));
 
 console.log(source
     .bufferWithCount(3, 2)
