@@ -49,3 +49,6 @@ let lookup = source.toLookup(it => it % 2);
 console.log(lookup.get(0).toArray());
 console.log(lookup.get(1).toArray());
 
+
+console.log(source.takeLast(3).toArray());
+console.log(source.skipLast(3).toArray());
