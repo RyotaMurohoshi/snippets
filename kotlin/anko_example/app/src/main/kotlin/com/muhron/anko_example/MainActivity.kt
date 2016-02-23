@@ -1,9 +1,8 @@
 package com.muhron.anko_example
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import org.jetbrains.anko.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fab = findViewById(R.id.fab) as FloatingActionButton
-        fab.setOnClickListener { view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show() }
+        async() {
+            Thread.sleep(10000L)
+
+            uiThread {
+                toast("Hello")
+            }
+        }
     }
 }
