@@ -54,3 +54,6 @@ console.log(Ix.Enumerable.repeat(0, 10).toArray());
 
 console.log(source.takeLast(3).toArray());
 console.log(source.skipLast(3).toArray());
+
+console.log(source.any());
+console.log(source.isEmpty());
