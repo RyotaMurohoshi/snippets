@@ -14,7 +14,9 @@
   "scripts": {
     "test": "gulp test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "x-ray": "^2.0.3"
+  },
   "devDependencies": {
     "del": "2.0.2",
     "gulp": "^3.9.0",

@@ -11,5 +11,7 @@
   "filesGlob": [
     "src/**/*.ts"
   ],
-  "files": []
+  "files": [
+    "src/index.ts"
+  ]
 }
