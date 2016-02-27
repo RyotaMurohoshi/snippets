@@ -1,8 +1,11 @@
 package com.muhron.lombok_example;
 
-public class Main {
+import lombok.val;
 
+public class Main {
     public static void main(String[] args) {
-        System.out.println("hello");
+        val person = new Person("Ryota", 27);
+
+        System.out.println(person);
     }
 }
