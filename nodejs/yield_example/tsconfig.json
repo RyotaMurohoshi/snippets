@@ -6,12 +6,13 @@
     "noImplicitAny": true,
     "outDir": "./lib",
     "preserveConstEnums": true,
-    "removeComments": true
+    "removeComments": true,
+    "target": "es6"
   },
   "filesGlob": [
     "src/**/*.ts"
   ],
   "files": [
-    "src/greeter.ts"
+    "src/index.ts"
   ]
 }
