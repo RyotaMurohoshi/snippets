@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./lib",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "target": "es6"
+  },
+  "filesGlob": [
+    "src/**/*.ts"
+  ],
+  "files": [
+    "src/index.ts"
+  ]
+}
