@@ -13,6 +13,7 @@
   ],
   "files": [
     "src/all_example.ts",
+    "src/catch_example.ts",
     "src/map_series_example.ts",
     "src/promisfy_example.ts"
   ]
