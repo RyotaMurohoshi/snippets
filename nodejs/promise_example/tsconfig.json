@@ -12,7 +12,8 @@
     "src/**/*.ts"
   ],
   "files": [
-    "src\\map_series_example.ts",
-    "src\\promisfy_example.ts"
+    "src/all_example.ts",
+    "src/map_series_example.ts",
+    "src/promisfy_example.ts"
   ]
 }
