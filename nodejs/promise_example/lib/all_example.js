@@ -13,4 +13,9 @@ var args = [
     { message: 'Good morning', delayMilliSeconds: 500 },
     { message: 'Good night', delayMilliSeconds: 2000 }
 ];
-Promise.mapSeries(args, returnDelay).then(console.log);
+Promise.all([
+    returnDelay({ message: 'Hello', delayMilliSeconds: 1000 }),
+    returnDelay({ message: 'Bye', delayMilliSeconds: 3000 }),
+    returnDelay({ message: 'Good morning', delayMilliSeconds: 500 }),
+    returnDelay({ message: 'Good night', delayMilliSeconds: 2000 })
+]).then(console.log);
