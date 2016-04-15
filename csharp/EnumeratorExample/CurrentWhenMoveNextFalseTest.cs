@@ -6,7 +6,7 @@ using System.Linq;
 namespace EnumeratorExample
 {
 	[TestFixture ()]
-	public class Test
+	public class CurrentMoveNextFalseTest
 	{
 		[Test ()]
 		public void TestEmptyArray ()
