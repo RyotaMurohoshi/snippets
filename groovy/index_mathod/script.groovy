@@ -8,3 +8,6 @@ assert [:] == [].indexed()
 assert [0 : "A"] == ["A"].indexed()
 assert [0 : "A", 1 : "B"] == ["A", "B"].indexed()
 assert [0 : "A", 1 : "B", 2 : "C"] == ["A", "B", "C"].indexed()
+
+assert ["A", "B", "C"].withIndex() == ["A", "B", "C"].indexed().collect {i, e -> [e, i]}
+assert ["A", "B", "C"].indexed() == ["A", "B", "C"].withIndex().collectEntries {e, i -> [i, e]}
