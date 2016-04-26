@@ -11,3 +11,13 @@ assert [0 : "A", 1 : "B", 2 : "C"] == ["A", "B", "C"].indexed()
 
 assert ["A", "B", "C"].withIndex() == ["A", "B", "C"].indexed().collect {i, e -> [e, i]}
 assert ["A", "B", "C"].indexed() == ["A", "B", "C"].withIndex().collectEntries {e, i -> [i, e]}
+
+assert [] == [].withIndex(10)
+assert [["A", 10]] == ["A"].withIndex(10)
+assert [["A", 10], ["B", 11]] == ["A", "B"].withIndex(10)
+assert [["A", 10], ["B", 11], ["C", 12]] == ["A", "B", "C"].withIndex(10)
+
+assert [:] == [].indexed(10)
+assert [10 : "A"] == ["A"].indexed(10)
+assert [10 : "A", 11 : "B"] == ["A", "B"].indexed(10)
+assert [10 : "A", 11 : "B", 12 : "C"] == ["A", "B", "C"].indexed(10)
