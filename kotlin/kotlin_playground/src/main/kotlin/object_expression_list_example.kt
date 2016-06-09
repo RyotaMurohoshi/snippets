@@ -1,3 +1,5 @@
+package com.mrstar.kotlin_playground
+
 data class Person(val firstName: String, val lastName: String, val age: Int)
 
 fun main(args: Array<String>) {
@@ -20,9 +22,9 @@ fun main(args: Array<String>) {
     println(personsWithPair);
 
 
-//  next code is compile error.
-//    val person = data object {
-//        val name = "RyotaMurohoshi";
-//        val age = 27;
-//    }
+    //  next code is compile error.
+    //    val person = data object {
+    //        val name = "RyotaMurohoshi";
+    //        val age = 27;
+    //    }
 }

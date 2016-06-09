@@ -1,4 +1,4 @@
-package com.mrstar.delegated_propety_example
+package com.mrstar.kotlin_playground;
 
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
