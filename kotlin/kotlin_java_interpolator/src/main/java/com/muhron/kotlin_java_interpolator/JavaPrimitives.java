@@ -11,7 +11,7 @@ public class JavaPrimitives {
         throw new InvalidStateException("use as utility class.");
     }
 
-    public static Short getShorWrapper() {
+    public static Short getShortWrapper() {
         return 1;
     }
 
@@ -31,7 +31,7 @@ public class JavaPrimitives {
         return 1L;
     }
 
-    public static long getLontPrimitive() {
+    public static long getLongPrimitive() {
         return 1L;
     }
 
@@ -39,7 +39,7 @@ public class JavaPrimitives {
         return 0.0F;
     }
 
-    public static float getFloawtPrimitive() {
+    public static float getFloatPrimitive() {
         return 0.0F;
     }
 
