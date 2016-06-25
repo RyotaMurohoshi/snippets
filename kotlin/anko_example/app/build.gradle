@@ -32,7 +32,7 @@ dependencies {
     compile 'org.jetbrains.anko:anko-sdk15:0.8.2'
 }
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    ext.kotlin_version = '1.0.2-1'
     repositories {
         mavenCentral()
     }
