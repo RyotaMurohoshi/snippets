@@ -8,13 +8,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        async() {
-            Thread.sleep(10000L)
-
-            uiThread {
-                toast("Hello")
+        verticalLayout {
+            padding = dip(30)
+            editText {
+                hint = "Name"
+                textSize = 24f
+            }
+            editText {
+                hint = "Password"
+                textSize = 24f
+            }
+            button("Login") {
+                textSize = 26f
             }
         }
     }
