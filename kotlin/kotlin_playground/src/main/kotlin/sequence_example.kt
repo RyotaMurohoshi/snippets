@@ -2,6 +2,10 @@ package com.mrstar.kotlin_playground
 
 fun main(args: Array<String>) {
 
+    example01()
+}
+
+fun example01(){
     println("---create list---")
     val list = listOf(1, 2, 3, 4, 5).map {
         println("list map $it")
@@ -23,7 +27,6 @@ fun main(args: Array<String>) {
     for(element in sequence){
         println("for print sequence loop : $element")
     }
-}
 
 /*
 ---create list---
@@ -50,4 +53,6 @@ sequence map 4
 for print sequence loop : 4
 sequence map 5
 for print sequence loop : 5
- */
+*/
+}
+
