@@ -1,11 +1,45 @@
 package com.mrstar.kotlin_playground
 
 fun main(args: Array<String>) {
-
-    example01()
+    example02()
+//    example01()
 }
 
-fun example01(){
+fun example02() {
+    println("---create list---")
+    val list = listOf(1, 2, 3, 4, 5)
+            .map {
+                println("list map $it")
+                it
+            }
+            .filter {
+                println("list filter $it")
+                true
+            }
+
+    println("---loop list---")
+    for (element in list) {
+        println("for print list loop : $element")
+    }
+
+    println("---create sequence---")
+    val sequence = sequenceOf(1, 2, 3, 4, 5)
+            .map {
+                println("sequence map $it")
+                it
+            }
+            .filter {
+                println("sequence filter $it")
+                true
+            }
+
+    println("---loop sequence---")
+    for (element in sequence) {
+        println("for print sequence loop : $element")
+    }
+}
+
+fun example01() {
     println("---create list---")
     val list = listOf(1, 2, 3, 4, 5).map {
         println("list map $it")
@@ -13,7 +47,7 @@ fun example01(){
     }
 
     println("---loop list---")
-    for(element in list){
+    for (element in list) {
         println("for print list loop : $element")
     }
 
@@ -24,7 +58,7 @@ fun example01(){
     }
 
     println("---loop sequence---")
-    for(element in sequence){
+    for (element in sequence) {
         println("for print sequence loop : $element")
     }
 
