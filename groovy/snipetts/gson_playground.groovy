@@ -31,3 +31,4 @@ assert personString == '{"name":"Ryota","rank":"1st"}'
 def decodedPerson = gson.fromJson(personString, Person.class)
 assert originalPerson == decodedPerson
 
+assert new Person (null, null) == gson.fromJson('{}', Person.class)
