@@ -1,7 +1,16 @@
 package com.mrstar.kotlin_playground
 
+import java.io.File
+
+//val gson = Gson()
+
 fun main(args: Array<String>) {
+    val lines : List<String> = File("data.jsonlines").readLines()
+    lines.forEach { println(it) }
+
 }
+
+//fun convertToData(line: String) = Gson.from
 
 fun listExample0() {
     val list = listOf(1, 2, 3)
