@@ -1,194 +1,168 @@
 package com.mrstar.kotlin_playground
 
-fun main(args: Array<String>) {
-//    example01()
+import com.google.gson.Gson
+import java.io.File
 
-gst//    example02()
-//    example03()
+val gson = Gson()
+
+fun sequenceExample2() {
+    val lineSequence = File("data.jsonlines")
+            .bufferedReader()
+            .lineSequence()
+
+    val result = lineSequence
+            .map { convertToData(it) }
+            .filter { filterData(it) }
+            .take(10)
+
+    for (it in result) {
+        println(it)
+    }
 }
 
-fun example03() {
-    println("---create list---")
-    val list = listOf(1, 2, 3, 4, 5)
-            .map {
-                println("list map $it")
-                it
-            }
-            .filter {
-                println("list filter $it")
-                true
-            }
-            .take(3)
+fun listExample2() {
+    val lineList: List<String> =
+            File("data.jsonlines").readLines()
 
-    println("---loop list---")
-    for (element in list) {
-        println("for print list loop : $element")
+    val result = lineList
+            .map { convertToData(it) }
+            .filter { filterData(it) }
+            .take(10)
+
+    for (it in result) {
+        println(it)
     }
-
-    println("---create sequence---")
-    val sequence = sequenceOf(1, 2, 3, 4, 5)
-            .map {
-                println("sequence map $it")
-                it
-            }
-            .filter {
-                println("sequence filter $it")
-                true
-            }
-            .take(3)
-
-    println("---loop sequence---")
-    for (element in sequence) {
-        println("for print sequence loop : $element")
-    }
-/*
----create list---
-list map 1
-list map 2
-list map 3
-list map 4
-list map 5
-list filter 1
-list filter 2
-list filter 3
-list filter 4
-list filter 5
----loop list---
-for print list loop : 1
-for print list loop : 2
-for print list loop : 3
----create sequence---
----loop sequence---
-sequence map 1
-sequence filter 1
-for print sequence loop : 1
-sequence map 2
-sequence filter 2
-for print sequence loop : 2
-sequence map 3
-sequence filter 3
-for print sequence loop : 3
-*/
 }
 
-fun example02() {
-    println("---create list---")
-    val list = listOf(1, 2, 3, 4, 5)
-            .map {
-                println("list map $it")
-                it
-            }
-            .filter {
-                println("list filter $it")
-                true
-            }
+fun convertToData(string: String): PersonData = gson.fromJson(string, PersonData::class.java)
+fun filterData(person: PersonData): Boolean = 27 <= person.age && person.age < 33
 
-    println("---loop list---")
-    for (element in list) {
-        println("for print list loop : $element")
-    }
+data class PersonData(val name: String, val age: Int)
 
-    println("---create sequence---")
-    val sequence = sequenceOf(1, 2, 3, 4, 5)
-            .map {
-                println("sequence map $it")
-                it
-            }
-            .filter {
-                println("sequence filter $it")
-                true
-            }
-
-    println("---loop sequence---")
-    for (element in sequence) {
-        println("for print sequence loop : $element")
-    }
-/*
----create list---
-list map 1
-list map 2
-list map 3
-list map 4
-list map 5
-list filter 1
-list filter 2
-list filter 3
-list filter 4
-list filter 5
----loop list---
-for print list loop : 1
-for print list loop : 2
-for print list loop : 3
-for print list loop : 4
-for print list loop : 5
----create sequence---
----loop sequence---
-sequence map 1
-sequence filter 1
-for print sequence loop : 1
-sequence map 2
-sequence filter 2
-for print sequence loop : 2
-sequence map 3
-sequence filter 3
-for print sequence loop : 3
-sequence map 4
-sequence filter 4
-for print sequence loop : 4
-sequence map 5
-sequence filter 5
-for print sequence loop : 5
-*/
-}
-
-fun example01() {
-    println("---create list---")
-    val list = listOf(1, 2, 3, 4, 5).map {
-        println("list map $it")
+fun listExample0() {
+    val list = listOf(1, 2, 3)
+    val result = list.map {
+        println("map $it")
         it
     }
 
-    println("---loop list---")
-    for (element in list) {
-        println("for print list loop : $element")
-    }
+    println("--------")
 
-    println("---create sequence---")
-    val sequence = sequenceOf(1, 2, 3, 4, 5).map {
-        println("sequence map $it")
-        it
-    }
+    for (it in result) println("for $it")
 
-    println("---loop sequence---")
-    for (element in sequence) {
-        println("for print sequence loop : $element")
-    }
-
-/*
----create list---
-list map 1
-list map 2
-list map 3
-list map 4
-list map 5
----loop list---
-for print list loop : 1
-for print list loop : 2
-for print list loop : 3
-for print list loop : 4
-for print list loop : 5
----create sequence---
----loop sequence---
-sequence map 1
-for print sequence loop : 1
-sequence map 2
-for print sequence loop : 2
-sequence map 3
-for print sequence loop : 3
-sequence map 4
-for print sequence loop : 4
-sequence map 5
-for print sequence loop : 5
-*/
+    /*
+    map 1
+    map 2
+    map 3
+    --------
+    for 1
+    for 2
+    for 3
+    */
 }
+
+fun listExample1() {
+    val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val result = list
+            .map {
+                println("map $it")
+                it
+            }
+            .filter {
+                println("filter $it")
+                it % 2 == 0
+            }
+            .take(3)
+
+    println("--------")
+
+    for (it in result) println("for $it")
+
+    /*
+    map 1
+    map 2
+    map 3
+    map 4
+    map 5
+    map 6
+    map 7
+    map 8
+    map 9
+    filter 1
+    filter 2
+    filter 3
+    filter 4
+    filter 5
+    filter 6
+    filter 7
+    filter 8
+    filter 9
+    --------
+    for 2
+    for 4
+    for 6
+     */
+}
+
+fun sequenceExample0() {
+    val list = listOf(1, 2, 3)
+    val result = list
+            .asSequence()
+            .map {
+                println("map $it")
+                it
+            }
+
+    println("--------")
+
+    for (it in result) println("for $it")
+
+    /*
+    --------
+    map 1
+    for 1
+    map 2
+    for 2
+    map 3
+    for 3
+    */
+}
+
+fun sequenceExample1() {
+    val list = sequenceOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val result = list
+            .map {
+                println("map $it")
+                it
+            }
+            .filter {
+                println("filter $it")
+                it % 2 == 0
+            }
+            .take(3)
+
+    println("--------")
+
+    for (it in result) println("for $it")
+
+    /*
+    --------
+    map 1
+    filter 1
+    map 2
+    filter 2
+    for 2
+    map 3
+    filter 3
+    map 4
+    filter 4
+    for 4
+    map 5
+    filter 5
+    map 6
+    filter 6
+    for 6
+    */
+}
+
 
