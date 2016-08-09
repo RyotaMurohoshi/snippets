@@ -1,2 +1,4 @@
-println System.env.PATH
-// println System.getEnv()['Path']
+def showPathEnv(){
+  // println System.getEnv()['Path']
+  println System.env.PATH
+}
