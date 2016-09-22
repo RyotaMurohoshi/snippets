@@ -3,6 +3,8 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeFormatter
 import java.time.LocalDate
+import java.time.Instant
+import java.time.ZoneId
 import java.time.format.FormatStyle
 
 def localDateTime = ZonedDateTime.parse("2000-01-01T00:09:00+09:00")
@@ -24,3 +26,5 @@ assert englishYearMonthString == "July 2016"
 def japaneseYearMonthString = DateTimeFormatter.ofPattern("yyyy年MM月").withLocale(Locale.JAPANESE).format(date)
 assert japaneseYearMonthString == "2016年07月"
 
+def epochTime = ZonedDateTime.ofInstant(Instant.ofEpochSecond(0), ZoneId.systemDefault());
+assert '1970-01-01T09:00:00+09:00[Asia/Tokyo]' == DateTimeFormatter.ISO_DATE_TIME.format(epochTime)
