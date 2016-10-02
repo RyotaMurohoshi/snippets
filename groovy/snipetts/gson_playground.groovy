@@ -34,3 +34,6 @@ assert originalPerson == decodedPerson
 assert new Person (null, null) == gson.fromJson('{}', Person.class)
 
 assert null == gson.fromJson('{"name":"Ryota","rank":"4th"}', Person.class).rank
+assert null == gson.fromJson('{"name":"Ryota","rank":""}', Person.class).rank
+assert null == gson.fromJson('{"name":"Ryota","rank":null}', Person.class).rank
+assert null == gson.fromJson('{"name":"Ryota"}', Person.class).rank
