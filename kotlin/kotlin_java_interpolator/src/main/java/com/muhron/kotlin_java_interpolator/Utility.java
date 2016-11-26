@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Utility {
+    public static String returnNullableStringJava() {
+        return null;
+    }
+
     public static String returnStringNonNull() {
         return "";
     }
