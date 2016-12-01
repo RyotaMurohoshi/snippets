@@ -33,6 +33,7 @@ fun examples(): Unit {
 }
 
 fun useNullableFunKotlin(): Unit {
+    // IDEが出す型はString!ではなくて、String
     val str = returnNullableStringKotlin()
 
     // これもOK
@@ -45,6 +46,37 @@ fun useNullableFunKotlin(): Unit {
 
     println(str?.length) // これならOK
 }
+
+fun useNullableFunJavaNullable(): Unit {
+    // IDEが出す型はString!ではなくて、String?
+    val str = Utility.returnStringWithNullableAnnotation()
+
+    // これもOK
+    //val str : String? = Utility.returnNullableStringJava()
+
+    // これはコンパイルエラー
+    //val str : String = Utility.returnStringWithNullableAnnotation()
+
+
+    println(str?.length) // これもOK
+    // println(str.length) // これはコンパイルエラー
+}
+
+
+fun useNullableFunJavaNotNull(): Unit {
+    val str = Utility.returnStringWithNotNullAnnotation()
+
+    // これもOK
+    //val str : String = Utility.returnStringWithNotNullAnnotation()
+
+    // これもOK
+    //val str : String? = Utility.returnStringWithNotNullAnnotation()
+
+
+//    println(str?.length) // 警告がでる
+    println(str.length) // これはOK
+}
+
 
 fun useNullableFunJava(): Unit {
     val str = Utility.returnNullableStringJava()
