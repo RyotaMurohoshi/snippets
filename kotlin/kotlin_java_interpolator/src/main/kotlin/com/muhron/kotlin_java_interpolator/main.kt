@@ -1,6 +1,10 @@
 package com.muhron.kotlin_java_interpolator
 
 fun main(args: Array<String>) {
+    useNullableFunJavaAsString()
+}
+
+fun examples(): Unit {
     val s00: String = Utility.returnStringNonNull()
     val s01: String? = Utility.returnStringNonNull()
 //    val s10 : String = Utility.returnStringNull()
@@ -13,14 +17,6 @@ fun main(args: Array<String>) {
 //    val s30 : String = Utility.returnStringWithNullableAnnotation()
     val s31: String? = Utility.returnStringWithNullableAnnotation()
 
-    val s40: String = returnString()
-    val s41: String? = returnString()
-
-//    val s50 : String = returnStringNullableReturnNonNull()
-    val s51: String? = returnStringNullableReturnNonNull()
-
-//    val s60 : String = returnStringNullableReturnNull()
-    val s61: String? = returnStringNullableReturnNull()
 
     val l = Utility.returnStringList()
     println(l)
@@ -36,6 +32,83 @@ fun main(args: Array<String>) {
     val list: kotlin.collections.List<Int> = a
 }
 
-fun returnString(): String = ""
-fun returnStringNullableReturnNonNull(): String? = ""
-fun returnStringNullableReturnNull(): String? = null
+fun useNullableFunKotlin(): Unit {
+    // IDEが出す型はString!ではなくて、String
+    val str = returnNullableStringKotlin()
+
+    // これもOK
+    // val str : String? = returnNullableStringKotlin()
+
+    // これはコンパイルエラー
+    // val str : String = returnNullableStringKotlin()
+
+    // println(str.length) // コンパイルエラー
+
+    println(str?.length) // これならOK
+}
+
+fun useNullableFunJavaNullable(): Unit {
+    // IDEが出す型はString!ではなくて、String?
+    val str = Utility.returnStringWithNullableAnnotation()
+
+    // これもOK
+    //val str : String? = Utility.returnNullableStringJava()
+
+    // これはコンパイルエラー
+    //val str : String = Utility.returnStringWithNullableAnnotation()
+
+
+    println(str?.length) // これもOK
+    // println(str.length) // これはコンパイルエラー
+}
+
+
+fun useNullableFunJavaNotNull(): Unit {
+    val str = Utility.returnStringWithNotNullAnnotation()
+
+    // これもOK
+    //val str : String = Utility.returnStringWithNotNullAnnotation()
+
+    // これもOK
+    //val str : String? = Utility.returnStringWithNotNullAnnotation()
+
+
+//    println(str?.length) // 警告がでる
+    println(str.length) // これはOK
+}
+
+
+fun useNullableFunJava(): Unit {
+    val str = Utility.returnNullableStringJava()
+
+
+    // これもOK
+    // val str : String? = Utility.returnNullableStringJava()
+
+    // これもOK
+    // val str : String = Utility.returnNullableStringJava()
+
+    println(str?.length) // これならOK
+    println(str.length) // これもOK
+}
+
+fun useNullableFunJavaAsNullableString(): Unit {
+    val str: String? = Utility.returnNullableStringJava()
+    println(str?.length)
+
+    // コンパイルエラー
+    // println(str.length)
+}
+
+
+fun useNullableFunJavaAsString(): Unit {
+    val str: String = Utility.returnNullableStringJava()
+    println(str.length)
+
+    // それ必要ないよって、警告が出る
+    // println(str?.length)
+}
+
+
+fun returnStringKotlin(): String = ""
+fun returnNullableStringKotlin(): String? = null
