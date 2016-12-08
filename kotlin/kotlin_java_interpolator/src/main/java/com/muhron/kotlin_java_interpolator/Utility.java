@@ -3,34 +3,18 @@ package com.muhron.kotlin_java_interpolator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Utility {
-    public static String returnNullableStringJava() {
-        return null;
-    }
-
-    public static String returnStringNonNull() {
-        return "";
-    }
-
-    public static String returnStringNull() {
+    public static String returnStringJava() {
         return null;
     }
 
     @Nullable
-    public static String returnStringWithNullableAnnotation() {
-        return "";
+    public static String returnStringJavaNullableAnnotation() {
+        return null;
     }
 
     @NotNull
-    public static String returnStringWithNotNullAnnotation() {
-        return "";
-    }
-
-    @NotNull
-    public static List<String> returnStringList() {
-        return new ArrayList<>();
+    public static String returnStringJavaNotNullAnnotation() {
+        return null;
     }
 }
