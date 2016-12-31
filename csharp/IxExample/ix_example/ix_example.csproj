@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D00229B8-B91B-4B3C-A30A-DCE7BC0E0068}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ix_example</RootNamespace>
+    <AssemblyName>ix_example</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive">
+      <HintPath>..\packages\Ix-Main.1.2.5\lib\net45\System.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnonymousComparer.cs" />
+    <Compile Include="OtherClasses\Person.cs" />
+    <Compile Include="OtherClasses\Point.cs" />
+    <Compile Include="UnitTests\Creation\CreateExample.cs" />
+    <Compile Include="UnitTests\Creation\ReturnExample.cs" />
+    <Compile Include="UnitTests\Creation\ThrowExample.cs" />
+    <Compile Include="UnitTests\Creation\DeferExample.cs" />
+    <Compile Include="UnitTests\Creation\GenerateExample.cs" />
+    <Compile Include="UnitTests\Creation\UsingExample.cs" />
+    <Compile Include="UnitTests\Creation\RepeatExample.cs" />
+    <Compile Include="UnitTests\Aggregates\IsEmpty.cs" />
+    <Compile Include="UnitTests\Aggregates\MaxByExample.cs" />
+    <Compile Include="UnitTests\Aggregates\MaxExample.cs" />
+    <Compile Include="UnitTests\Aggregates\MinByExample.cs" />
+    <Compile Include="UnitTests\Aggregates\MinExample.cs" />
+    <Compile Include="UnitTests\Buffering\MemoizeExample.cs" />
+    <Compile Include="UnitTests\Buffering\ShareExample.cs" />
+    <Compile Include="UnitTests\Buffering\PublishExample.cs" />
+    <Compile Include="UnitTests\Imperative\WhileExample.cs" />
+    <Compile Include="UnitTests\Imperative\DoWhileExample.cs" />
+    <Compile Include="UnitTests\Imperative\IfExample.cs" />
+    <Compile Include="UnitTests\Imperative\CaseExample.cs" />
+    <Compile Include="UnitTests\Imperative\ForExample.cs" />
+    <Compile Include="UnitTests\Multiple\ConcatExample.cs" />
+    <Compile Include="UnitTests\Multiple\SelectManyExample.cs" />
+    <Compile Include="UnitTests\Single\BufferExample.cs" />
+    <Compile Include="UnitTests\Single\IgnoreElementsExample.cs" />
+    <Compile Include="UnitTests\Single\DistinctExample.cs" />
+    <Compile Include="UnitTests\Single\DistinctUntileChangedExample.cs" />
+    <Compile Include="UnitTests\Single\ExpandExample.cs" />
+    <Compile Include="UnitTests\Single\StartWithExample.cs" />
+    <Compile Include="UnitTests\Single\ScanExample.cs" />
+    <Compile Include="UnitTests\Single\SkipLastExample.cs" />
+    <Compile Include="UnitTests\Single\TakeLastExample.cs" />
+    <Compile Include="UnitTests\Single\RepeatExample.cs" />
+    <Compile Include="UnitTests\Single\HideExample.cs" />
+    <Compile Include="UnitTests\Single\DoExample.cs" />
+    <Compile Include="UnitTests\Single\ForEachExample.cs" />
+    <Compile Include="UnitTests\Exceptions\CatchExample.cs" />
+    <Compile Include="UnitTests\Exceptions\FinallyExample.cs" />
+    <Compile Include="UnitTests\Exceptions\OnErrorResumeNextExample.cs" />
+    <Compile Include="UnitTests\Exceptions\RetryExample.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OtherClasses\" />
+    <Folder Include="UnitTests\" />
+    <Folder Include="UnitTests\Creation\" />
+    <Folder Include="UnitTests\Aggregates\" />
+    <Folder Include="UnitTests\Buffering\" />
+    <Folder Include="UnitTests\Imperative\" />
+    <Folder Include="UnitTests\Multiple\" />
+    <Folder Include="UnitTests\Single\" />
+    <Folder Include="UnitTests\Exceptions\" />
+  </ItemGroup>
+</Project>
